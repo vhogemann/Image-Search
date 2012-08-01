@@ -1,0 +1,15 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile project( ':index' )
+	groovy 'org.codehaus.groovy:groovy:1.8.6'
+	groovy 'commons-cli:commons-cli:1.2'
+}
+
+mainClassName = "com.hogemann.image.tools.App"

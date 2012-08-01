@@ -1,0 +1,25 @@
+apply plugin: 'war'
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'eclipse-wtp'
+
+repositories {
+	mavenCentral(artifactUrls: [
+		"http://repo1.maven.org/maven2",
+		"http://download.java.net/maven/2",
+		"https://repository.jboss.org/nexus/content/groups/public/",
+	])
+}
+
+dependencies {
+	compile project( ':index' )
+	compile 'commons-fileupload:commons-fileupload:1.2.2'
+	compile 'javax.servlet:servlet-api:2.5'
+	compile 'org.jboss.resteasy:resteasy-jaxrs:2.3.1.GA'
+	compile 'org.jboss.resteasy:resteasy-jackson-provider:2.3.1.GA'
+	compile 'org.jboss.resteasy:resteasy-multipart-provider:2.3.1.GA'
+	compile 'org.jboss.resteasy:resteasy-spring:2.3.1.GA'
+	compile 'org.springframework:spring-web:3.1.1.RELEASE'
+	testCompile 'junit:junit:4.10'
+	testCompile 'org.springframework:spring-test:3.1.1.RELEASE'
+}
